@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/snale.png`
+		src:`images/Golem_stand_still.png`
 	},
 	states:{
 		//The idle animation 
@@ -30,7 +30,8 @@ var playerData ={
 			frames:
 			[
 				{width:128, height:128, startX:0, startY:0},
-				{width:128, height:128, startX:128, startY:0}
+
+				
 				
 			]
 		},
@@ -42,10 +43,9 @@ var playerData ={
 			frames:
 			[
 				{width:128, height:128, startX:0, startY:0},
-				{width:128, height:128, startX:128, startY:0},
-				{width:128, height:128, startX:256, startY:0},
-				{width:128, height:128, startX:384, startY:0},
-				{width:128, height:128, startX:512, startY:0}
+				{width:128, height:128, startX:141.24, startY:0},
+				{width:128, height:128, startX:282.48, startY:0},
+
 			]
 		},
 		//The jump animation 
