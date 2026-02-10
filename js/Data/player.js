@@ -19,24 +19,24 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/Golem_stand_still (converted to px 128).png`
+		src:`images/Golem_stand_still (Editing) (1).png`
 	},
 	states:{
 		//The idle animation 
     	idle:
 		{
-			fps:2,
+			fps:5,
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:0, startY:0},
-				{width:128, height:128, startX:128, startY:0},
-				{width:128, height:128, startX:256, startY:0},
-				{width:128, height:128, startX:384, startY:0},
-				{width:128, height:128, startX:512, startY:0},
-				{width:128, height:128, startX:640, startY:0},
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:896, startY:0},
+				{width:128, height:120, startX:0, startY:0},
+				{width:128, height:120, startX:128, startY:0},
+				{width:128, height:120, startX:256, startY:0},
+				{width:128, height:120, startX:384, startY:0},
+				{width:128, height:120, startX:512, startY:0},
+				{width:128, height:120, startX:640, startY:0},
+				{width:128, height:120, startX:768, startY:0},
+				{width:128, height:120, startX:896, startY:0},
 				{width:128, height:128, startX:1024, startY:0},
 				{width:128, height:128, startX:1152, startY:0},
 				{width:128, height:128, startX:1280, startY:0},
@@ -119,7 +119,7 @@ var playerData ={
 		//The jump animation 
 		jump:
 		{
-			fps:15,
+			fps:1,
 			cycle:false,
 			frames:
 			[
