@@ -25,18 +25,18 @@ var playerData ={
 		//The idle animation 
     	idle:
 		{
-			fps:5,
+			fps:2,
 			cycle:true,
 			frames:
 			[
-				{width:128, height:120, startX:0, startY:0},
-				{width:128, height:120, startX:128, startY:0},
-				{width:128, height:120, startX:256, startY:0},
-				{width:128, height:120, startX:384, startY:0},
-				{width:128, height:120, startX:512, startY:0},
-				{width:128, height:120, startX:640, startY:0},
-				{width:128, height:120, startX:768, startY:0},
-				{width:128, height:120, startX:896, startY:0},
+				{width:128, height:128, startX:0, startY:0},
+				{width:128, height:128, startX:128, startY:0},
+				{width:128, height:128, startX:256, startY:0},
+				{width:128, height:128, startX:384, startY:0},
+				{width:128, height:128, startX:512, startY:0},
+				{width:128, height:128, startX:640, startY:0},
+				{width:128, height:128, startX:768, startY:0},
+				{width:128, height:128, startX:896, startY:0},
 				{width:128, height:128, startX:1024, startY:0},
 				{width:128, height:128, startX:1152, startY:0},
 				{width:128, height:128, startX:1280, startY:0},
@@ -102,17 +102,30 @@ var playerData ={
 		//The walwidth:128, height:128,
 		walk:
 		{
-			fps:1,
+			fps:2,
 			cycle:true,
 			frames:
 			[
-				{width:256, height:256, startX:0, startY:0},
-				{width:256, height:256, startX:256, startY:0},
-				{width:256, height:256, startX:512, startY:0},
-				{width:256, height:256, startX:768, startY:0},
-				{width:256, height:256, startX:512, startY:0},
-				{width:256, height:256, startX:1024, startY:0},
-				{width:256, height:256, startX:1280, startY:0},	
+				{width:128, height:128, startX:2176, startY:128},
+				{width:128, height:128, startX:2304, startY:128},
+				{width:128, height:128, startX:2432, startY:128},
+				{width:128, height:128, startX:2560, startY:128},
+				{width:128, height:128, startX:2688, startY:128},
+				{width:128, height:128, startX:2816, startY:128},
+				{width:128, height:128, startX:2944, startY:128},
+				{width:128, height:128, startX:3072, startY:128},
+				{width:128, height:128, startX:3200, startY:128},
+				{width:128, height:128, startX:3328, startY:128},
+				{width:128, height:128, startX:3456, startY:128},
+				{width:128, height:128, startX:3584, startY:128},
+				{width:128, height:128, startX:3712, startY:128},
+				{width:128, height:128, startX:3840, startY:128},
+				{width:128, height:128, startX:3968, startY:128},	
+				{width:128, height:128, startX:4094, startY:128},
+				{width:128, height:128, startX:4224, startY:128},
+				{width:128, height:128, startX:4352, startY:128},
+				{width:128, height:128, startX:4480, startY:128},
+				
 
 			]
 		},
