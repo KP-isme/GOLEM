@@ -9,7 +9,7 @@ function GameObject(obj)
 		this.y = canvas.height/2;
 		this.start = {x:this.x, y:this.y};
 		this.width = 100;
-		this.height = 100;
+		this.height = 100; //button size
 		
 		this.color = "#ff0000";
 		this.force = 1;

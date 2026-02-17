@@ -2,7 +2,7 @@ var x=false;
 var caveData ={
 	info:{
 		layout:[
-			[0,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,2],
+			[0,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,2],
 			[2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
 			[2,x,x,7,x,x,7,x,x,x,x,x,x,7,7,x,7,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
 			[6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
@@ -15,7 +15,7 @@ var caveData ={
 		],
 		src:`images/bg2.png`,
 	},
-	states:
+	states:  //this will change the pixles for each tile
 	[		
 			{
 				fps:5,
@@ -66,7 +66,8 @@ var caveData ={
 			}
 		]
 	}
-	var caveBackData ={
+	
+	var caveBackData ={ //cave background
 		info:{
 			layout:[
 			[0,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
@@ -82,7 +83,7 @@ var caveData ={
 		states:caveData.states
 		}
 
-		var caveHitData={
+		var caveHitData={  //this stuff is hitbox x means no hitbox while numbers mean yes hit box
 			info:{
 				layout:[
 					[0,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,2],

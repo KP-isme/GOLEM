@@ -1,7 +1,7 @@
 
 /*------------Use this if you want to implement States---------------*/
 var gravity = 1;
-var friction = {x:.85,y:.97}
+var friction = {x:0.91,y:0.89}
 
 var stage = new GameObject({width:canvas.width, height:canvas.height});
 
@@ -9,7 +9,7 @@ var stage = new GameObject({width:canvas.width, height:canvas.height});
 var level = new GameObject({x:0,y:0});
 
 //Avatar
-var wiz = new GameObject({width:128, height:128, spriteData:playerData}).makeSprite(playerData)
+var wiz = new GameObject({width:256, height:256, spriteData:playerData}).makeSprite(playerData)
 wiz.force=1
 
 //The ground
@@ -18,7 +18,6 @@ ground.img.src=`images/ground.png`
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green", world:level})
-
 
 
 var leftBorder = new GameObject({width:50, height:canvas.height, world:level, x:0})
@@ -81,10 +80,10 @@ bg.img.src=`images/bgfull.png`
 var bullets=[]
 var canShoot=true;
 var shotTimer = 0;
-var shotDelay = 21;
+var shotDelay = 0.1;
 var currentBullet = 0;
 
-for(let i=0; i<100; i++)
+for(let i=0; i<1000; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
 	//bullets[i].img.src="images/mrt.jpg"
