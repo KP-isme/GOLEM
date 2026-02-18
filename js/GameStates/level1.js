@@ -80,7 +80,7 @@ bg.img.src=`images/bgfull.png`
 var bullets=[]
 var canShoot=true;
 var shotTimer = 0;
-var shotDelay = 0.1;
+var shotDelay = 0;
 var currentBullet = 0;
 
 for(let i=0; i<1000; i++)
@@ -154,7 +154,7 @@ gameStates[`level1`] = function()
 
 	if(keys[` `] )
 	{
-		if(canShoot)
+		if(canShoot=true)
 		{
 			wiz.changeState(`attack`)
 			shotTimer = shotDelay
@@ -178,7 +178,7 @@ gameStates[`level1`] = function()
 	}
 	else
 	{
-		shotTimer=0
+		shotTimer=10
 	}
 	
 	//-----Player movement-----///

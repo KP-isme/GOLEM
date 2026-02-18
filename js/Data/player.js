@@ -223,14 +223,32 @@ var playerData ={
 			//width:300,
 			frames:
 			[
-				{width:384, height:378, startX:1024, startY:0},
-				{width:384, height:378, startX:1024, startY:0},
-				{width:384, height:378, startX:1024, startY:0},
-				{width:384, height:378, startX:1152, startY:0},
-				{width:384, height:378, startX:1152, startY:0},
-				{width:384, height:378, startX:1152, startY:0},
-				{width:384, height:378, startX:1152, startY:0}
+				{width:384, height:378, startX:4224, startY:2304},
+				{width:384, height:378, startX:4608, startY:2304},
+				{width:384, height:378, startX:4992, startY:2304},
+				{width:384, height:378, startX:5376, startY:2304},
+				{width:384, height:378, startX:5760, startY:2304},
+				{width:384, height:378, startX:6144, startY:2304},
+				{width:384, height:378, startX:6528, startY:2304},
+				{width:384, height:378, startX:6912, startY:2304},
+				{width:384, height:378, startX:7296, startY:2304},
+				{width:384, height:378, startX:7680, startY:2304},
 				
+				//second
+				
+				{width:384, height:378, startX:0, startY:2688},
+				{width:384, height:378, startX:384, startY:2688},
+				{width:384, height:378, startX:768, startY:2688},
+				{width:384, height:378, startX:1152, startY:2688},
+				{width:384, height:378, startX:1536, startY:2688},
+				{width:384, height:378, startX:1920, startY:2688},
+				{width:384, height:378, startX:2304, startY:2688},
+				{width:384, height:378, startX:2688, startY:2688},
+				{width:384, height:378, startX:3072, startY:2688},
+				{width:384, height:378, startX:3456, startY:2688},
+				{width:384, height:378, startX:3840, startY:2688},
+				{width:384, height:378, startX:4224, startY:2688},
+				{width:384, height:378, startX:4608, startY:2688},
 			]
 		}
 	}
