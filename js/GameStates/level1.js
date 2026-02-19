@@ -247,7 +247,7 @@ gameStates[`level1`] = function()
 	//moves the middleground
 		bg.x -= offset.x*.9;
 	}
-
+ 
 	//moves the clouds
 	//clouds.x = level.x*.25;
 	
