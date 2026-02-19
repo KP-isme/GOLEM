@@ -58,8 +58,8 @@ var levelItems=new Group();
 levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //Very back background
-var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src = `images/sky.png`
+var sky = new GameObject({width:4096, height:512, color:"cyan"})
+sky.img.src = `images/sky_golem.png`
 
 /*
  	//Not used, unless you want a 4th level of paralax
@@ -69,11 +69,11 @@ sky.img.src = `images/sky.png`
 
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+rbg.img.src=`images/trees_m.png`
 
 //middleground
-var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+var bg = new GameObject({x:level.x,y:level.y, width:1024, height:512})
+bg.img.src=`images/trees.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
@@ -238,11 +238,14 @@ gameStates[`level1`] = function()
 		wiz.x -= offset.x;
 		level.x -= offset.x;
 
+	//makes sky move ever so slightly
+		sky.x -= offset.x*.07
+
 	//moves repeating background
-		rbg.x -= offset.x*.5;
+		rbg.x -= offset.x*.3;
 
 	//moves the middleground
-		bg.x -= offset.x*.75;
+		bg.x -= offset.x*.9;
 	}
 
 	//moves the clouds
@@ -253,6 +256,15 @@ gameStates[`level1`] = function()
 		rbg.x=0; 
 	}
 
+	if(bg.x < -bg.width || bg.x > bg.width)
+	{
+		bg.x=0; 
+	}
+
+	if(sky.x < -sky.width || sky.x > sky.width)
+	{
+		sky.x=0; 
+	}
 	
 	
 	//Sets up pattern for the ground
@@ -267,8 +279,14 @@ gameStates[`level1`] = function()
 	sky.color = skyPattern
 
 	//renders the sky
-	sky.render()
+	//sky.render() <-- old code
+	sky.drawStaticImage({x:0,y:-250});
+ 
 	
+	sky.drawStaticImage({x:-sky.width,y:-250});
+	sky.drawStaticImage({x:sky.width,y:-250});
+	
+ 
 	//Renders the repeating background
 	rbg.drawStaticImage({x:0,y:0});
 	rbg.drawStaticImage({x:-rbg.width,y:0});
@@ -276,6 +294,10 @@ gameStates[`level1`] = function()
 
 	//renders the midground
 	bg.drawStaticImage({x:0,y:0});
+
+	
+	bg.drawStaticImage({x:-bg.width,y:0});
+	bg.drawStaticImage({x:bg.width,y:0});
 	
 	//alternate methd for rendering the repeating background
 	//rbg.render(`drawStaticImage`, [0,0])
