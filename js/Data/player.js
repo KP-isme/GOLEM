@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/Golem_stand_still (Editing) (3).png`
+		src:`images/Golem_stand_still (Editing) (10).png`
 	},
 	
 	states:{
@@ -186,7 +186,7 @@ var playerData ={
 		jump:
 		{
 			fps:1,
-			cycle:false,
+			cycle:true,
 			frames:
 			[
 				{width:384, height:378, startX:7296, startY:1920},
@@ -219,7 +219,7 @@ var playerData ={
 		attack:
 		{
 			fps:1,
-			cycle:false,
+			cycle:true,
 			//width:300,
 			frames:
 			[
@@ -249,8 +249,34 @@ var playerData ={
 				{width:384, height:378, startX:3840, startY:2688},
 				{width:384, height:378, startX:4224, startY:2688},
 				{width:384, height:378, startX:4608, startY:2688},
+
+
+				
+			]
+		},
+		//The attack animation 
+		smash:
+		{
+			fps:8,
+			cycle:true,
+			//width:300,
+			frames:
+			[
+				
+
+				{width:384, height:378, startX:4992, startY:2688},
+				{width:384, height:378, startX:5376, startY:2688},
+				{width:384, height:378, startX:5760, startY:2688},
+				{width:384, height:378, startX:6144, startY:2688},
+				{width:384, height:378, startX:6528, startY:2688},
+				{width:384, height:378, startX:6912, startY:2688},
+
+
+				
 			]
 		}
+
+
 	}
 		
 }
