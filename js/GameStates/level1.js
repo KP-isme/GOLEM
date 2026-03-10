@@ -343,7 +343,7 @@
 
 /*------------Use this if you want to implement States---------------*/
 var gravity = 1;
-var friction = {x:0.91,y:0.89}
+var friction = {x:0.80,y:0.89}
 
 var stage = new GameObject({width:canvas.width, height:canvas.height});
 
@@ -351,12 +351,12 @@ var stage = new GameObject({width:canvas.width, height:canvas.height});
 var level = new GameObject({x:0,y:0});
 
 //Avatar
-var wiz = new GameObject({width:256, height:256, spriteData:playerData}).makeSprite(playerData)
-wiz.force=1
+var wiz = new GameObject({width:192, height:192, spriteData:playerData}).makeSprite(playerData)
+wiz.force=3
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2-200,height:64,y:canvas.height-32, color:"green", world:level})
-ground.img.src=`images/ground.png`
+ground.img.src=`images/dirt.png`
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green", world:level})
@@ -412,6 +412,12 @@ sky.img.src = `images/sky_golem.png`
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
 rbg.img.src=`images/trees_m.png`
+
+var rbg2 = new GameObject({x:level.x + 400, y:level.y, width:1024, height:512})
+rbg2.img.src=`images/trees.png`
+
+var rbg3 = new GameObject({x:level.x + 800, y:level.y, width:1024, height:512})
+rbg3.img.src=`images/trees.png`
 
 //middleground
 var bg = new GameObject({x:level.x,y:level.y, width:1024, height:512})
@@ -585,10 +591,18 @@ gameStates[`level1`] = function()
 		sky.x -= offset.x*.07
 
 	//moves repeating background
-		rbg.x -= offset.x*.3;
+		rbg.x -= offset.x*.1;
+
+	//moves repeating background
+		rbg3.x -= offset.x*.2;
+
+	//moves repeating background
+		rbg2.x -= offset.x*.3;
+
+
 
 	//moves the middleground
-		bg.x -= offset.x*.9;
+		bg.x -= offset.x*.6;
 	}
  
 	//moves the clouds
@@ -597,6 +611,16 @@ gameStates[`level1`] = function()
 	if(rbg.x < -rbg.width || rbg.x > rbg.width)
 	{
 		rbg.x=0; 
+	}
+
+	if(rbg2.x < -rbg2.width || rbg2.x > rbg2.width)
+	{
+		rbg2.x=0; 
+	}
+
+	if(rbg3.x < -rbg3.width || rbg3.x > rbg3.width)
+	{
+		rbg3.x=0; 
 	}
 
 	if(bg.x < -bg.width || bg.x > bg.width)
@@ -633,8 +657,20 @@ gameStates[`level1`] = function()
 	rbg.drawStaticImage({x:-rbg.width,y:0});
 	rbg.drawStaticImage({x:rbg.width,y:0});
 
+	//Renders the repeating background
+	rbg3.drawStaticImage({x:0,y:0});
+	rbg3.drawStaticImage({x:-rbg3.width,y:0});
+	rbg3.drawStaticImage({x:rbg3.width,y:0});
+
+	//Renders the repeating background
+	rbg2.drawStaticImage({x:0,y:0});
+	rbg2.drawStaticImage({x:-rbg2.width,y:0});
+	rbg2.drawStaticImage({x:rbg2.width,y:0});
+
+
+
 	//renders the midground
-	bg.drawStaticImage({x:0,y:0});
+	bg.drawStaticImage({x:0,y:50});
 
 	
 	bg.drawStaticImage({x:-bg.width,y:0});

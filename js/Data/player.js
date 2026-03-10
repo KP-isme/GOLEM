@@ -26,7 +26,7 @@ var playerData ={
 		//The idle animation 
     	idle:
 		{
-			fps:2,
+			fps:3,
 			cycle:true,
 			frames:
 			[
@@ -186,7 +186,7 @@ var playerData ={
 		jump:
 		{
 			fps:1,
-			cycle:true,
+			cycle:false,
 			frames:
 			[
 				{width:384, height:378, startX:7296, startY:1920},
@@ -218,8 +218,8 @@ var playerData ={
 		//The attack animation 
 		attack:
 		{
-			fps:1,
-			cycle:true,
+			fps:3,
+			cycle:false,
 			//width:300,
 			frames:
 			[
