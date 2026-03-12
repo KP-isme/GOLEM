@@ -14,6 +14,10 @@ menuBackground.img.src = "images/menu.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
+var backgroundmusicSound = new Audio("sounds/backgroundmusic.mp3")
+backgroundmusicSound.volume = 1;
+backgroundmusicSound.current = 0;
+
 gameStates[`menu`] =function(){
 
 	//Makes the button clickable
@@ -23,6 +27,9 @@ gameStates[`menu`] =function(){
 		{
 			//Changes to the game state
 			gameStates.changeState(`level1`)
+			
+			sounds.play(`backgroundmusic`,1,true)
+			
 		}
 
 		// //Hover Effect Graffic

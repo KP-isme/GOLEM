@@ -342,7 +342,7 @@
 
 
 /*------------Use this if you want to implement States---------------*/
-var gravity = 1;
+var gravity = 0.9;
 var friction = {x:0.80,y:0.89}
 
 var stage = new GameObject({width:canvas.width, height:canvas.height});
@@ -352,26 +352,42 @@ var level = new GameObject({x:0,y:0});
 
 //Avatar
 var wiz = new GameObject({width:192, height:192, spriteData:playerData}).makeSprite(playerData)
-wiz.force=3
+wiz.force=1.5
 
 //The ground
-var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2-200,height:64,y:canvas.height-32, color:"green", world:level})
+var ground = new GameObject({width:100000000, x:canvas.width*10/2-200,height:64,y:canvas.height-32, color:"green", world:level})
 ground.img.src=`images/dirt.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green", world:level})
+var plat = new GameObject({width:256, height:64,y:canvas.height-2000, color:"green", world:level})
 
 
-var leftBorder = new GameObject({width:50, height:canvas.height, world:level, x:0})
+var leftBorder = new GameObject({width:50, height:canvas.height, world:level, x:100000})
 
-
+//this is how to chnage where the cave is 
 //Cave foreground Tile Grid
-var cave = new Grid(caveData, {world:level, x:1024, tileHeight:64, tileWidth:64});
+var cave = new Grid(caveData, {world:level, x:-12824, tileHeight:64, tileWidth:64});
 //Cave background Tile Grid
-var caveBack = new Grid(caveBackData, {world:level, x:1024, tileHeight:64, tileWidth:64});
+var caveBack = new Grid(caveBackData, {world:level, x:-12824, tileHeight:64, tileWidth:64});
 //cave hitbox grid
-var caveHit = new Grid(caveHitData, {world:level, x:1024, tileHeight:64, tileWidth:64});
+var caveHit = new Grid(caveHitData, {world:level, x:-12824, tileHeight:64, tileWidth:64});
 
+var jumpSound = new Audio("sounds/jumping.mp3")
+jumpSound.volume = 0.05;
+jumpSound.current = 0;
+
+
+var smashSound = new Audio("sounds/smash.mp3")
+smashSound.volume = 1;
+smashSound.current = 0;
+
+var backgroundmusicSound = new Audio("sounds/backgroundmusic.mp3")
+backgroundmusicSound.volume = 1;
+backgroundmusicSound.current = 0;
+
+var soundstuffSound = new Audio("sounds/soundstuff.mp3")
+smashSound.volume = 1;
+smashSound.current = 0;
 
 
 //This is a group used for collisions
@@ -420,7 +436,7 @@ var rbg3 = new GameObject({x:level.x + 800, y:level.y, width:1024, height:512})
 rbg3.img.src=`images/trees.png`
 
 //middleground
-var bg = new GameObject({x:level.x,y:level.y, width:1024, height:512})
+var bg = new GameObject({x:level.x,y:level.y + 50, width:1024, height:512})
 bg.img.src=`images/trees.png`
 
 
@@ -457,6 +473,7 @@ gameStates[`level1`] = function()
 	{
 		wiz.top={x:0,y:0};
 		wiz.changeState(`crouch`)
+		
 	}
 	else
 	{
@@ -470,7 +487,7 @@ gameStates[`level1`] = function()
 		{
 			if(wiz.canJump)wiz.changeState(`walk`)
 			wiz.vx += wiz.force
-			
+			smashSound.play()
 		}
 		
 	}
@@ -481,15 +498,20 @@ gameStates[`level1`] = function()
 		{
 			if(wiz.canJump)wiz.changeState(`walk`)
 			wiz.vx += -wiz.force
+			smashSound.play()
+			
+			
 		}
 		
 	}
 	if(keys[`W`] && wiz.canJump )
 	{
+		jumpSound.play();
+
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
-		//sounds.play(`splode`,1)
+		//sounds.play(`splode`,0)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -515,8 +537,8 @@ gameStates[`level1`] = function()
 			bullets[currentBullet].y = wiz.y + 20;
 			bullets[currentBullet].dir = wiz.dir;
 			
-			//sounds.play(`splode`,1)
-
+			// jumpSound.play('soundstuff',0)
+			soundstuffSound.play()
 			currentBullet++;
 			if(currentBullet>=bullets.length)
 			{
@@ -670,7 +692,7 @@ gameStates[`level1`] = function()
 
 
 	//renders the midground
-	bg.drawStaticImage({x:0,y:50});
+	bg.drawStaticImage({x:0,y:0});
 
 	
 	bg.drawStaticImage({x:-bg.width,y:0});
